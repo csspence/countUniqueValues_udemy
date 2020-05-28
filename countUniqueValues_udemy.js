@@ -11,5 +11,17 @@ countUniqueValues([-2, -1, -1, 0, 1]) // 4
 */
 
  const countUniqueValues = (array) => {
-   
+   let count = 1;
+   let index = 0;
+   if(array.length === 0) {
+     return 0;
+   }
+   for(let i = 1; i < array.length; i++) {
+     if(array[i] !== array[index]) {
+       count++;
+       index = i;
+     }
+   }
+
+   return count;
  }
